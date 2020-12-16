@@ -1,0 +1,85 @@
+public class Window {
+    
+    public static final int SIZE = 4;
+    
+    public static void main(String[] args) {
+        drawWindow();
+        // this method was made to have a comparison when
+        // creating a window without methods
+        
+        for (int k = 0; k < 2; k++) {
+            // this loop determines how many line and window segements are drawn
+            // excluding the last line in a window
+            
+            for (int i = 0; i < 2; i++) {
+                System.out.print("+");
+                // this loop draws (+) and (===...) based on the 
+                // variable input for SIZE
+                
+                for (int h = 0; h < SIZE; h++) {
+                    System.out.print("=");
+                    // this loop controls how many (=) signs appear between
+                    // each (+) sign
+                }
+            }
+            System.out.println("+");
+            // this plus sign is the final plus of the line
+            // and starts a new line
+            
+            for (int a = 0; a < SIZE; a++) {
+                // this loop controls how many lines of glass are drawn
+                // based on the SIZE value
+                
+                for (int j = 0; j < 3; j++) {
+                    System.out.print("|");
+                    // this loop writes (|_) based on the SIZE value
+                    
+                    for (int g = 0; g < SIZE; g++) {
+                        System.out.print(" ");
+                        // this loop creates spaces between each (|) vertical
+                        // line
+                    }
+                }
+                System.out.println();
+                // this print statement starts the next line of glass
+            }
+        }
+        
+        for (int i = 0; i < 2; i++) {
+            // this loop draws the last line of the window
+            System.out.print("+");
+            for (int h = 0; h < SIZE; h++) {
+                System.out.print("=");
+            }
+        }
+        System.out.println("+");
+    }
+    
+    public static void drawWindow() {
+        for (int i = 0; i < 2; i++) {
+            drawLine();
+            drawLine();
+            System.out.println("+");
+            for (int k = 0; k < 3; k++) {
+                drawGlass();
+                drawGlass();
+                drawGlass();
+                System.out.println();
+            }
+        }
+        drawLine();
+        drawLine();
+        System.out.println("+\n\n\n");
+    }
+    
+    public static void drawLine() {
+        System.out.print("+");
+        for (int i = 0; i < 3; i++) {
+            System.out.print("=");
+        }
+    }
+    
+    public static void drawGlass() {
+        System.out.print("|   ");
+    }
+}
